@@ -17,8 +17,12 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.11",
     "mongo-uri-builder": "^1.0.3",
-    "mongoose": "^5.2.7"
+    "mongoose": "^5.2.7",
+    "path": "^0.12.7",
+    "properties": "^1.2.1"
   },
   "devDependencies": {
     "morgan": "^1.9.0",
