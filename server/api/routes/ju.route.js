@@ -13,15 +13,15 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.get('/page/:pageId', (req, res, next) => {
-  const pageId = Number(req.params.pageId);
-  JuDetail.find({}, { error: 0 }, (err, jus) => {
-    if (err) console.log(err);
-    res.end(
-      JSON.stringify(jus.slice(pageId * pageCount, (pageId + 1) * pageCount))
-    );
-  });
-});
+// router.get('/page/:pageId', (req, res, next) => {
+//   const pageId = Number(req.params.pageId);
+//   JuDetail.find({}, { error: 0 }, (err, jus) => {
+//     if (err) console.log(err);
+//     res.end(
+//       JSON.stringify(jus.slice(pageId * pageCount, (pageId + 1) * pageCount))
+//     );
+//   });
+// });
 
 router.get('/ju/:juId', (req, res, next) => {
   const juId = String(req.params.juId);

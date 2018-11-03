@@ -13,15 +13,19 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.get('/page/:pageId', (req, res, next) => {
-  const pageId = Number(req.params.pageId);
-  ItemDetail.find({}, { error: 0 }, (err, items) => {
-    if (err) console.log(err);
-    res.end(
-      JSON.stringify(items.slice(pageId * pageCount, (pageId + 1) * pageCount))
-    );
-  });
-});
+// router.get('/page/:pageId', (req, res, next) => {
+//   const pageId = Number(req.params.pageId);
+//   ItemDetail.find(
+//     {},
+//     { error: 0 },
+//     { array: { $slice: (pageId * pageCount, (pageId + 1) * pageCount) } },
+//     (err, items) => {
+//       if (err) console.log(err);
+//       // JSON.stringify(items.slice(pageId * pageCount, (pageId + 1) * pageCount))
+//       res.end(JSON.stringify(items));
+//     }
+//   );
+// });
 
 router.get('/item/:itemId', (req, res, next) => {
   const itemId = String(req.params.itemId);
